@@ -12,8 +12,6 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
-
-
     // blank page functions
     public function blade_index()
     {
