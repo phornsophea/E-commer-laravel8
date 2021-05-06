@@ -1,6 +1,6 @@
 <div class="col admin_product_individual_body">
     <div class="card position-relative">
-        <img src="/{{ $product->thumb_image }}" class="card-img-top" alt="product image {{ $product->thumb_image }}" />
+        <img src="{{ $product->thumb_image }}" class="card-img-top" alt="product image {{ $product->thumb_image }}" />
         <div class="">
             <div class="product-discount"><span class="">-{{ $product->discount }}%</span></div>
         </div>

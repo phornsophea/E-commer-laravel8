@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class HelperController extends Controller
 {
-    public static function discount_price($main_price,$discount,$expiration_date)
+    public static function discount_price($main_price, $discount, $expiration_date)
     {
         $today_date = Carbon::now()->format('Y-m-d');
 
