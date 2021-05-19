@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class HelperController extends Controller
 {
+
     public static function discount_price()
-    // public static function discount_price($main_price, $discount, $expiration_date)
-    { 
+    {
         $main_price='';
         $discount='';
         $expiration_date='';
