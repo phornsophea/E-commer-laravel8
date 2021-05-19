@@ -1,7 +1,6 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-
     <div class="content-wrapper">
         <div class="container-fluid">
             @include('admin.includes.bread_cumb',['title'=>'User Management'])
