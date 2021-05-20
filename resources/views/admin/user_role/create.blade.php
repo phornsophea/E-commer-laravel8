@@ -10,80 +10,45 @@
                         <div class="card-body">
                             <div class="card-title">Created User</div>
                             <hr />
-                            <form method="POST" action="{{ route('admin_user_store') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('admin_user_role_store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
-                                    <label for="input-21" class="col-sm-2 col-form-label">First Name</label>
+                                    <label for="input-21" class="col-sm-2 col-form-label">Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="first_name" class="form-control" id="input-21" placeholder="First name" />
-                                        @error('first_name')
+                                        <input type="text" name="name" class="form-control" id="input-21" placeholder="Username" />
+                                        @error('name')
                                             <div class="text-warning">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="input-21" class="col-sm-2 col-form-label">Last Name</label>
+                                    <label for="input-22" class="col-sm-2 col-form-label">Serial</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="last_name" class="form-control" id="input-21" placeholder="Last name" />
-                                        @error('last_name')
+                                        <input type="text" name="serial" class="form-control" id="input-22" placeholder="Enter Your serial" />
+                                        @error('serial')
                                             <div class="text-warning">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="input-21" class="col-sm-2 col-form-label">User Name</label>
+                                  <div class="form-group row">
+                                    <label for="input-22" class="col-sm-2 col-form-label">Slug</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="username" class="form-control" id="input-21" placeholder="Username" />
-                                        @error('username')
+                                        <input type="text" name="slug" class="form-control" id="input-22" placeholder="Enter Your serial" />
+                                        @error('slug')
                                             <div class="text-warning">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="input-22" class="col-sm-2 col-form-label">Email</label>
+                               <div class="form-group row">
+                                    <label for="input-22" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
-                                        <input type="email" name="email" class="form-control" id="input-22" placeholder="Enter Your Email Address" />
-                                        @error('email')
+                                        <input type="text" name="status" class="form-control" id="input-22" placeholder="Enter Your status" />
+                                        @error('status')
                                             <div class="text-warning">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="input-23" class="col-sm-2 col-form-label">Mobile Number</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="phone" class="form-control" id="input-23" placeholder="phone" />
-                                        @error('phone')
-                                            <div class="text-warning">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="input-24" class="col-sm-2 col-form-label">Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" name="password" class="form-control" id="input-24" placeholder="Enter Password" />
-                                        @error('password')
-                                            <div class="text-warning">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="input-25" class="col-sm-2 col-form-label">Confirm Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="password_confirmation" class="form-control" id="input-25" placeholder="Confirm Password" />
-                                        @error('password_confirmation')
-                                            <div class="text-warning">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="input-25" class="col-sm-2 col-form-label">Image</label>
-                                    <div class="col-sm-10">
-                                        <input type="file" name="image" class="form-control" id="input-25"/>
-                                        @error('image')
-                                            <div class="text-warning">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
+                               
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label"></label>
                                     <div class="col-sm-10">

@@ -27,4 +27,45 @@ class UserRoleController extends Controller
 
         return redirect()->back()->with('success','data updated');
     }
+
+     public function create()
+    {
+        $user_roles = UserRole::orderBy('serial','DESC')->get();
+        return view('admin.user_role.create',compact('user_roles'));
+    }
+    public function store(Request $request)
+    {
+        $this->validate($request,[
+            'name' => ['required'],
+            'serial' => ['required'],
+            'slug' => ['required'],
+            'status' => ['required'],
+        ]);
+
+        $userrole = new UserRole();
+        $userrole->name = $request->name;
+        $userrole->serial = $request->serial;
+        $userrole->slug = $request->slug;
+        $userrole->status = $request->status;
+        $userrole->created_at = Carbon::now()->toDateTimeString();
+        // $userrole->creator = Auth::user()->id;
+        $userrole->save();
+        
+
+        // return $userrole;
+         
+         // $userrole->slug = $userrole->id.uniqid(10);
+        // dd($request->all());
+        //function_body
+        return redirect('user-role/index')->with('success','data added');
+    }
+    public function destoy(Request $request){
+        $UserRole=UserRole::find($request->id);
+        $UserRole->status= 0;
+        // $UserRole->create = Auth::UserRole()->id;
+        $UserRole->save();
+
+        return redirect('user-role/index')->with('message','Delete Success!');
+
+    }
 }

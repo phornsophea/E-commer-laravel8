@@ -11,7 +11,7 @@
         </ul>
     </li>
 
-    @if (Auth::user()->role_id == 1)
+    @if (Auth::user()->role_id == 1 || Auth::user()->role_id == 2)
         <li>
             <a class="has-arrow" href="#">
                 <div class="parent-icon"><i class="zmdi zmdi-view-dashboard"></i></div>

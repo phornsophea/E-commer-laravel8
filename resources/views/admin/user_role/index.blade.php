@@ -10,9 +10,9 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
                             <h5 class="card-title">All User Roles</h5>
-                            {{-- <a href="{{ route('admin_user_role_create') }}" class="btn btn-warning waves-effect waves-light m-1">
+                             <a href="{{ route('admin_user_role_create') }}" class="btn btn-warning waves-effect waves-light m-1">
                                 <i class="fa fa-plus"></i> <span>Add New</span>
-                            </a> --}}
+                            </a> 
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -28,7 +28,12 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($collection as $key=>$item)
-                                            <tr>
+                                            @if($item->status== 0 )
+                                            <tr style="pointer-events: none;background: gray">
+                                  
+                                            @else
+                                               <tr> 
+                                            @endif
                                                 <th scope="row">{{ $key+1 }}</th>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->serial }}</td>
@@ -47,9 +52,10 @@
                                                             class="role_update_btn btn btn-warning waves-effect waves-light m-1">
                                                             <i class="fa fa-pencil"></i> <span>edit</span>
                                                         </a>
-                                                        {{-- <a type="button" href="" class="btn btn-danger waves-effect waves-light m-1">
+                                                        <a type="button" href="{{route('admin_user_role_delete',$item->id) }}"
+                                                            class=" btn btn-danger waves-effect waves-light m-1">
                                                             <i class="fa fa-trash-o"></i> <span>delete</span>
-                                                        </a> --}}
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>

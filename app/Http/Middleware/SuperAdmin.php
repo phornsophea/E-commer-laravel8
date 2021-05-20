@@ -19,7 +19,11 @@ class SuperAdmin
     {
         if(Auth::check() && Auth::user()->role_id == 1 && Auth::user()->status == 1){
             return $next($request);
-        }else{
+        }
+        elseif (Auth::check() && Auth::user()->role_id == 2 && Auth::user()->status == 1) {
+            return $next($request);
+        }
+        else{
             return redirect('/admin')->with('warning','you have no permission.');
         }
         //

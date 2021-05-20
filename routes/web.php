@@ -80,7 +80,7 @@ Route::group([
     Route::post('/store', 'UserRoleController@store')->name('admin_user_role_store');
     Route::get('/edit', 'UserRoleController@edit')->name('admin_user_role_edit');
     Route::post('/update', 'UserRoleController@update')->name('admin_user_role_update');
-    Route::post('/delete', 'UserRoleController@delete')->name('admin_user_role_delete');
+    Route::get('/destoy/{id}', 'UserRoleController@destoy')->name('admin_user_role_delete');
 });
 
 Route::group([
